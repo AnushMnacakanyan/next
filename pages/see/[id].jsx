@@ -2,20 +2,20 @@ import axios from "axios";
 import { useState } from "react";
 
 export default function See({product}) {
-    const [prod,setProd]=useState()
+    const [prod,setProd]=useState([...product])
     const deleteprod=(id)=>{
         setProd(...prod.filter(elm=>elm.id!=id))
     }
 
-    return (<div>        
+    return (<div className="div1">        
       {
         prod?.map(elm=>{
-            return(<div>
+            return(<div className="div1-1">
                 <h3>{elm.title}</h3>
                 <p>{elm.description}</p>
                 <p>{elm.price}</p>
                 <p>{elm.category.name}</p>
-                <img src={elm.category.image} alt="" />
+                <img src={elm.category.image} alt="" width={150} />
                 <button>delete</button>
 
             </div>)
