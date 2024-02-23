@@ -3,10 +3,6 @@ import { useState } from "react";
 
 export default function See({product}) {
     const [prod,setProd]=useState([...product])
-    const deleteprod=(id)=>{
-        setProd(...prod.filter(elm=>elm.id!=id))
-    }
-
     return (<div className="div1">        
       {
         prod?.map(elm=>{
@@ -16,7 +12,6 @@ export default function See({product}) {
                 <p>{elm.price}</p>
                 <p>{elm.category.name}</p>
                 <img src={elm.category.image} alt="" width={150} />
-                <button onClick={()=> deleteprod(elm.id)}>delete</button>
 
             </div>)
         })
